@@ -39,6 +39,7 @@ public class UserController {
 	@Autowired
 	private ContactRepository contactRepository;
 	/**method for adding common data*/
+	
 	@ModelAttribute
 	public void addCommonData(Model model,Principal principal) {
 		   String name = principal.getName();

@@ -12,7 +12,7 @@ import javax.persistence.ManyToOne;
 public class Contact {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int contact_id;
 	private String name;
 	private String secondName;

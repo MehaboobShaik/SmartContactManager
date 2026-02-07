@@ -23,7 +23,7 @@ import javax.validation.constraints.Size;
 public class User {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@NotBlank(message="Name should not be empty..!")
 	@NotEmpty(message="Name should not be empty..!")
