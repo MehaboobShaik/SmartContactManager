@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.contactManager.entities.User;
 
-public class CustomUserDetails implements UserDetails{
+public class CustomUserDetails implements UserDetails {
 
 	/**
 	 * 
@@ -17,7 +17,7 @@ public class CustomUserDetails implements UserDetails{
 	private static final long serialVersionUID = 1L;
 
 	private User user;
-	
+
 	public CustomUserDetails(User user) {
 		super();
 		this.user = user;
@@ -25,13 +25,13 @@ public class CustomUserDetails implements UserDetails{
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-        SimpleGrantedAuthority simpleGrantedAuthority = new SimpleGrantedAuthority(user.getRole());
+		SimpleGrantedAuthority simpleGrantedAuthority = new SimpleGrantedAuthority(user.getRole());
 		return List.of(simpleGrantedAuthority);
 	}
 
 	@Override
 	public String getPassword() {
- 		return user.getPassword();
+		return user.getPassword();
 	}
 
 	@Override
@@ -41,7 +41,7 @@ public class CustomUserDetails implements UserDetails{
 
 	@Override
 	public boolean isAccountNonExpired() {
-     		return true;
+		return true;
 	}
 
 	@Override

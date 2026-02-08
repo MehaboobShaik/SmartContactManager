@@ -5,7 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -22,7 +21,7 @@ public class Contact {
 	private String image;
 	@Column(length = 5000)
 	private String description;
-	
+
 	@ManyToOne
 	private User user;
 
@@ -121,8 +120,5 @@ public class Contact {
 		return "Contact [contact_id=" + contact_id + ", name=" + name + ", secondName=" + secondName + ", work=" + work
 				+ ", email=" + email + ", phone=" + phone + ", image=" + image + ", description=" + description + "]";
 	}
-	
 
-	
-	
 }

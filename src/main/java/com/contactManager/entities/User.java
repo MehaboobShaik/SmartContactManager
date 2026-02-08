@@ -9,15 +9,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
-
-
-
 
 @Entity
 public class User {
@@ -25,23 +21,23 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	@NotBlank(message="Name should not be empty..!")
-	@NotEmpty(message="Name should not be empty..!")
-	@Size(min = 3 ,max = 20,message = "min 3 and max 20 charecters are allowed")
+	@NotBlank(message = "Name should not be empty..!")
+	@NotEmpty(message = "Name should not be empty..!")
+	@Size(min = 3, max = 20, message = "min 3 and max 20 charecters are allowed")
 	private String name;
 	@Column(unique = true)
 	@Email
 	private String email;
-	@NotBlank(message="password should not be empty..!")
+	@NotBlank(message = "password should not be empty..!")
 	private String password;
 	private String role;
 	private String imageUrl;
 	@Column(length = 500)
 	private String about;
 	private boolean enabled;
-	
+
 	public User() {
-		
+
 	}
 
 	public User(int id,
@@ -73,8 +69,7 @@ public class User {
 		this.contacts = contacts;
 	}
 
-
-    public int getId() {
+	public int getId() {
 		return id;
 	}
 
@@ -98,17 +93,13 @@ public class User {
 		this.email = email;
 	}
 
-	
-
 	public String getPassword() {
 		return password;
 	}
 
-    public void setPassword(String password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
-
-
 
 	public String getRole() {
 		return role;
@@ -141,16 +132,17 @@ public class User {
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
-	
+
 	public List<Contact> getContacts() {
 		return contacts;
 	}
+
 	public void setContacts(List<Contact> contacts) {
 		this.contacts = contacts;
 	}
 
-	@OneToMany(mappedBy = "user" ,cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<Contact> contacts=new ArrayList<Contact>();
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Contact> contacts = new ArrayList<Contact>();
 
 	@Override
 	public String toString() {
@@ -158,6 +150,5 @@ public class User {
 				+ ", imageUrl=" + imageUrl + ", about=" + about + ", enabled=" + enabled + ", contacts=" + contacts
 				+ "]";
 	}
-	
-	
+
 }
