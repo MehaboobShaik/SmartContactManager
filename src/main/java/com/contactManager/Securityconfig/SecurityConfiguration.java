@@ -15,21 +15,21 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Bean
-	public UserDetailsService getUserDetailsService() {
+	public UserDetailsService userDetailsService() {
 		return new UserDetailsServiceImpl();
 	}
 
 	@Bean
-	public BCryptPasswordEncoder bCryptPasswordEncoder() {
+	public BCryptPasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
 
 	@Bean
 	public DaoAuthenticationProvider authenticationProvider() {
-		DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
-		daoAuthenticationProvider.setUserDetailsService(getUserDetailsService());
-		daoAuthenticationProvider.setPasswordEncoder(bCryptPasswordEncoder());
-		return daoAuthenticationProvider;
+		DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
+		provider.setUserDetailsService(userDetailsService());
+		provider.setPasswordEncoder(passwordEncoder());
+		return provider;
 	}
 
 	@Override
@@ -39,9 +39,25 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/admin/**").hasRole("ADMIN").antMatchers("/user/**").hasRole("USER")
-				.antMatchers("/**").permitAll().and().formLogin().loginPage("/signin").loginProcessingUrl("/dologin")
-				.defaultSuccessUrl("/user/index").and().csrf().disable();
+
+		http
+	    .authorizeRequests(requests -> requests
+	        .antMatchers("/admin/**").hasRole("ADMIN")
+	        .antMatchers("/user/**").hasRole("USER")
+	        .antMatchers("/", "/signin", "/signup", "/css/**", "/js/**","/img/**").permitAll()
+	        .anyRequest().authenticated()
+	    )
+	    .formLogin(login -> login
+	        .loginPage("/signin")
+	        .loginProcessingUrl("/dologin")
+	        .defaultSuccessUrl("/user/index", true)
+	        .permitAll()
+	    )
+	    .logout(logout -> logout
+	        .logoutSuccessUrl("/signin?logout")
+	        .permitAll()
+	    )
+	    .csrf(csrf -> csrf.disable());
 
 	}
 

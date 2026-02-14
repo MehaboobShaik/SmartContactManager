@@ -21,48 +21,47 @@
 		<a class="navbar-brand" th:href="@{/}">
 			Smart Contact Manager
 		</a>
-
-
+	
+	
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-
+	
 			<ul class="navbar-nav ml-auto text-uppercase">
-
+	
 				<li class="nav-item active">
 					<a class="nav-link" th:href="@{/}">
 						Home <span class="sr-only">(current)</span>
 					</a>
 				</li>
-
+	
 				<!-- USER PROFILE -->
 				<li class="nav-item">
 					<a class="nav-link" href="javascript:void(0)" style="
-				           pointer-events: none;
-				           cursor: default;
-				           opacity: 0.6;
-				       ">
+					           pointer-events: none;
+					           cursor: default;
+					           opacity: 0.6; ">
 						<i class="fa-solid fa-user"></i>
 						<span th:text="${user.name}">Profile</span>
 					</a>
 				</li>
-
-
+	
+	
 				<!-- SETTINGS -->
 				<li class="nav-item disabled">
 					<a class="nav-link disabled" href="javascript:void(0);" style="cursor:not-allowed; opacity:0.6;">
 						<i class="fas fa-cogs"></i> Settings (Coming Soon)
 					</a>
 				</li>
-
-
+	
+	
 				<!-- LOGOUT -->
 				<li class="nav-item">
 					<a class="nav-link" th:href="@{/logout}">
 						<i class="fa-solid fa-right-from-bracket"></i> Logout
 					</a>
 				</li>
-
+	
 			</ul>
-
+	
 		</div>
 	</nav>
 	<!-- end of navbar -->
@@ -100,7 +99,7 @@
 		function deleteContact(cid) {
 			console.log(cid)
 			swal({
-				title: "Are you sure?" + cid,
+				title: "Are you sure ? ",
 				text: "Once deleted, you will not be able to recover this imaginary file!",
 				icon: "warning",
 				buttons: true,
