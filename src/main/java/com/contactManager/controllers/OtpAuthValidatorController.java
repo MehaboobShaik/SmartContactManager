@@ -36,7 +36,7 @@ public class OtpAuthValidatorController {
 
 	@Autowired
 	private EmailService emailService;
-	
+
 	@Value("${mail.otp.subject}")
 	private String otpSubject;
 
@@ -78,7 +78,6 @@ public class OtpAuthValidatorController {
 		log.info("Password verified successfully for user: {}", username);
 		log.debug("Generated OTP for user {}: {}", username, otp); // remove in production if needed
 
-		
 		String subject = otpSubject;
 
 		String body = String.format(otpBody, user.getName(), // %s → username

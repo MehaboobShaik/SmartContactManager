@@ -40,24 +40,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
-		http
-	    .authorizeRequests(requests -> requests
-	        .antMatchers("/admin/**").hasRole("ADMIN")
-	        .antMatchers("/user/**").hasRole("USER")
-	        .antMatchers("/", "/signin", "/signup", "/css/**", "/js/**","/img/**","/login-verify",
-	                "/validate-otp","/do_register").permitAll()
-	        .anyRequest().authenticated()
-	    )
-	    .formLogin(login -> login
-	        .loginPage("/signin")
-	        //.defaultSuccessUrl("/user/index", true)
-	        .permitAll()
-	    )
-	    .logout(logout -> logout
-	        .logoutSuccessUrl("/signin?logout")
-	        .permitAll()
-	    )
-	    .csrf(csrf -> csrf.disable());
+		http.authorizeRequests(
+				requests -> requests.antMatchers("/admin/**").hasRole("ADMIN").antMatchers("/user/**").hasRole("USER")
+						.antMatchers("/", "/signin", "/signup", "/css/**", "/js/**", "/img/**", "/login-verify",
+								"/validate-otp", "/do_register")
+						.permitAll().anyRequest().authenticated())
+				.formLogin(login -> login.loginPage("/signin")
+						// .defaultSuccessUrl("/user/index", true)
+						.permitAll())
+				.logout(logout -> logout.logoutSuccessUrl("/signin?logout").permitAll()).csrf(csrf -> csrf.disable());
 
 	}
 

@@ -3,7 +3,8 @@ package com.contactManager.controllers;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -24,9 +25,8 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 public class HomeController {
 
-	 private static final Logger log =
-	            LoggerFactory.getLogger(HomeController.class);
-	
+	private static final Logger log = LoggerFactory.getLogger(HomeController.class);
+
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
