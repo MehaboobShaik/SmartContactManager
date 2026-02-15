@@ -35,16 +35,12 @@
 	
 				<!-- USER PROFILE -->
 				<li class="nav-item">
-					<a class="nav-link" href="javascript:void(0)" style="
-					           pointer-events: none;
-					           cursor: default;
-					           opacity: 0.6; ">
-						<i class="fa-solid fa-user"></i>
-						<!--<span th:text="${user.name}">Profile</span> -->
-
-					</a>
+				    <a class="nav-link disabled-user">
+				        <i class="fa-solid fa-user"></i>
+				        <span th:text="${user.name}" class="username-text">Profile</span>
+				    </a>
 				</li>
-	
+
 	
 				<!-- SETTINGS -->
 				<li class="nav-item disabled">
