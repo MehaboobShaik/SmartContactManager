@@ -37,6 +37,7 @@ public class HomeController {
 	@GetMapping("/")
 	public String home(Model model) {
 		log.info("Home page requested");
+		log.info("Home page requested");
 		model.addAttribute("title", "Home - Smart Contact Manager");
 		return "home";
 	}
