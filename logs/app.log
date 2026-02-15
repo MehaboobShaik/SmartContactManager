@@ -320,3 +320,69 @@
 2026-02-15 10:01:09 [http-nio-8080-exec-7] DEBUG c.c.controllers.HomeController - Common user data added for: mahaboobmechon@gmail.com
 2026-02-15 10:01:09 [http-nio-8080-exec-7] INFO  c.c.controllers.HomeController - Fetching contacts for user: mahaboobmechon@gmail.com | Page: 0
 2026-02-15 10:01:12 [http-nio-8080-exec-3] INFO  c.c.controllers.HomeController - Login page opened
+2026-02-15 10:04:45 [restartedMain] INFO  c.c.SmartContactManagerApplication - Starting SmartContactManagerApplication using Java 21.0.7 on DESKTOP-1ULGF16 with PID 17008 (F:\Projects\SpringProjects\SpringBootApplication\SmartContactManager\target\classes started by MAHABOOB in F:\Projects\SpringProjects\SpringBootApplication\SmartContactManager)
+2026-02-15 10:04:45 [restartedMain] DEBUG c.c.SmartContactManagerApplication - Running with Spring Boot v2.7.4, Spring v5.3.23
+2026-02-15 10:04:45 [restartedMain] INFO  c.c.SmartContactManagerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-15 10:04:45 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-02-15 10:04:45 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-02-15 10:04:45 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-15 10:04:46 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 59 ms. Found 2 JPA repository interfaces.
+2026-02-15 10:04:47 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-02-15 10:04:47 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-15 10:04:47 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2026-02-15 10:04:47 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-15 10:04:47 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1974 ms
+2026-02-15 10:04:47 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-15 10:04:47 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.11.Final
+2026-02-15 10:04:47 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2026-02-15 10:04:47 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-15 10:04:48 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-15 10:04:48 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2026-02-15 10:04:49 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2026-02-15 10:04:49 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-15 10:04:49 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-15 10:04:49 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@76f65f22, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@26bd9a1d, org.springframework.security.web.context.SecurityContextPersistenceFilter@2c3d70bb, org.springframework.security.web.header.HeaderWriterFilter@fc3f7c2, org.springframework.security.web.authentication.logout.LogoutFilter@7704ebab, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@24ff3348, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3e511eb3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@26b022df, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2fd61843, org.springframework.security.web.session.SessionManagementFilter@78ad4290, org.springframework.security.web.access.ExceptionTranslationFilter@7318793e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2d55bc04]
+2026-02-15 10:04:50 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-02-15 10:04:50 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-02-15 10:04:50 [restartedMain] INFO  c.c.SmartContactManagerApplication - Started SmartContactManagerApplication in 5.883 seconds (JVM running for 6.99)
+2026-02-15 10:04:54 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-15 10:04:54 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-15 10:04:54 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-02-15 10:04:54 [http-nio-8080-exec-1] INFO  c.c.controllers.HomeController - Home page requested
+2026-02-15 10:04:56 [http-nio-8080-exec-5] INFO  c.c.controllers.HomeController - Login page opened
+2026-02-15 10:04:57 [http-nio-8080-exec-9] INFO  c.c.controllers.HomeController - Signup page opened
+2026-02-15 10:05:14 [http-nio-8080-exec-4] INFO  c.c.controllers.HomeController - Login page opened
+2026-02-15 10:05:21 [http-nio-8080-exec-8] INFO  c.c.controllers.HomeController - Signup page opened
+2026-02-15 10:07:35 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-02-15 10:07:35 [Thread-5] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-02-15 10:07:35 [Thread-5] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2026-02-15 10:07:35 [Thread-5] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-15 10:07:35 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-15 10:07:35 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-15 10:07:35 [restartedMain] INFO  c.c.SmartContactManagerApplication - Starting SmartContactManagerApplication using Java 21.0.7 on DESKTOP-1ULGF16 with PID 17008 (F:\Projects\SpringProjects\SpringBootApplication\SmartContactManager\target\classes started by MAHABOOB in F:\Projects\SpringProjects\SpringBootApplication\SmartContactManager)
+2026-02-15 10:07:35 [restartedMain] DEBUG c.c.SmartContactManagerApplication - Running with Spring Boot v2.7.4, Spring v5.3.23
+2026-02-15 10:07:35 [restartedMain] INFO  c.c.SmartContactManagerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-15 10:07:36 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-15 10:07:36 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 2 JPA repository interfaces.
+2026-02-15 10:07:36 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-02-15 10:07:36 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-15 10:07:36 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2026-02-15 10:07:36 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-15 10:07:36 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 686 ms
+2026-02-15 10:07:36 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-15 10:07:36 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2026-02-15 10:07:36 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2026-02-15 10:07:36 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2026-02-15 10:07:36 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2026-02-15 10:07:36 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-15 10:07:36 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-15 10:07:36 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@13dd519f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3bfef5ca, org.springframework.security.web.context.SecurityContextPersistenceFilter@79f754a1, org.springframework.security.web.header.HeaderWriterFilter@3690e1f1, org.springframework.security.web.authentication.logout.LogoutFilter@1051c745, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@69c0d3bd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@128522ec, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@23abc624, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4ff3aa93, org.springframework.security.web.session.SessionManagementFilter@3a1e22ff, org.springframework.security.web.access.ExceptionTranslationFilter@20596803, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@58359987]
+2026-02-15 10:07:37 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-02-15 10:07:37 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-02-15 10:07:37 [restartedMain] INFO  c.c.SmartContactManagerApplication - Started SmartContactManagerApplication in 1.519 seconds (JVM running for 173.637)
+2026-02-15 10:07:37 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-02-15 10:07:43 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-02-15 10:07:43 [Thread-7] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-02-15 10:07:43 [Thread-7] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-15 10:07:43 [Thread-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2026-02-15 10:07:43 [Thread-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
