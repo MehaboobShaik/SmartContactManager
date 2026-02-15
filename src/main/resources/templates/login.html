@@ -1,96 +1,90 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::Layout(~{::section})">
-
-<head>
-	<meta charset="ISO-8859-1">
-	<title>Login</title>
-</head>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="base::Layout(~{::section})">
 
 <body>
 
 	<section style="
-	    min-height:100vh;
-	    background:
-	        linear-gradient(
-	            rgba(0,0,0,0.75),
-	            rgba(0,0,0,0.75)
-	        ),
-	        url('/img/loginpage.jpg');
-	    background-size:cover;
-	    background-position:center;
-	    display:flex;
-	    align-items:center;
-	">
+    min-height:100vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+        url('/img/loginpage.jpg');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+">
 
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-5">
 
+					<div style="
+    background:#1f1f1f;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.6);
+">
 
+						<h3 class="text-center text-light mb-4">
+							🔐 Smart Contact Manager
+						</h3>
 
-		<div id="login" style="width:100%;">
-			<div class="container">
-				<div id="login-row" class="row justify-content-center align-items-center">
-					<div id="login-column" class="col-md-6">
+						<!-- ================= LOGIN FORM ================= -->
+						<div th:if="${otpSent == null}">
 
-						<!-- LOGIN CARD -->
-						<div id="login-box" class="col-md-12" style="
-                            background:#1f1f1f;
-                            padding:30px;
-                            border-radius:10px;
-                            box-shadow:0 10px 30px rgba(0,0,0,0.6);
-                         ">
+							<form th:action="@{/login-verify}" method="post">
 
-							<form id="login-form" class="form" th:action="@{/dologin}" method="post">
-
-								<h3 class="text-center" style="color:#e0e0e0; font-weight:600; margin-bottom:25px;">
-									Smart Contact Manager
-								</h3>
-
-								<div th:if="${param.error}" class="alert alert-danger">
-									Invalid username and password
+								<div th:if="${error}" class="alert alert-danger text-center">
+									Invalid Username or Password
 								</div>
 
-								<div th:if="${param.logout}" class="alert alert-danger">
-									You have been logged out
+								<div class="mb-3">
+									<label class="text-light">Email</label>
+									<input type="text" name="username" class="form-control bg-dark text-light border-0"
+										required>
 								</div>
 
-								<div class="form-group mb-3">
-									<label style="color:#bdbdbd;">Username</label>
-									<input type="text" name="username" id="username" class="form-control" style="
-                                          background:#2a2a2a;
-                                          border:1px solid #3a3a3a;
-                                          color:#ffffff;
-                                       ">
+								<div class="mb-3">
+									<label class="text-light">Password</label>
+									<input type="password" name="password"
+										class="form-control bg-dark text-light border-0" required>
 								</div>
 
-								<div class="form-group mb-3">
-									<label style="color:#bdbdbd;">Password</label>
-									<input type="password" name="password" id="password" class="form-control" style="
-                                          background:#2a2a2a;
-                                          border:1px solid #3a3a3a;
-                                          color:#ffffff;
-                                       ">
-								</div>
-
-								<div class="form-group mb-3">
-									<label style="color:#bdbdbd;">
-										<input id="remember-me" name="remember-me" type="checkbox">
-										Remember me
-									</label>
-								</div>
-
-								<div class="form-group mb-3">
-									<input type="submit" name="submit" class="btn btn-info btn-md" value="Login"
-										style="width:100%; font-weight:600;">
-								</div>
-
-								<div id="register-link" class="text-center">
-									<a href="/signup/" style="color:#9ecbff; text-decoration:none;">
-										Don’t have an account? Create one
-									</a>
-								</div>
+								<button type="submit" class="btn btn-info w-100" style="border-radius:30px;">
+									Send OTP
+								</button>
 
 							</form>
+
 						</div>
-						<!-- END LOGIN CARD -->
+
+						<!-- ================= OTP FORM ================= -->
+						<div th:if="${otpSent}">
+
+							<div class="alert alert-success text-center">
+								OTP sent to your email
+							</div>
+
+							<form th:action="@{/validate-otp}" method="post">
+
+								<div th:if="${error}" class="alert alert-danger text-center">
+									<span th:text="${error}"></span>
+								</div>
+
+								<div class="mb-3">
+									<label class="text-light">Enter OTP</label>
+									<input type="text" name="otp"
+										class="form-control bg-dark text-light border-0 text-center"
+										placeholder="Enter 6-digit OTP" maxlength="6" required>
+								</div>
+
+								<button type="submit" class="btn btn-success w-100" style="border-radius:30px;">
+									Verify & Login
+								</button>
+
+							</form>
+
+						</div>
 
 					</div>
 				</div>

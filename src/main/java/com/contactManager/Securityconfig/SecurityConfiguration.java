@@ -44,13 +44,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	    .authorizeRequests(requests -> requests
 	        .antMatchers("/admin/**").hasRole("ADMIN")
 	        .antMatchers("/user/**").hasRole("USER")
-	        .antMatchers("/", "/signin", "/signup", "/css/**", "/js/**","/img/**").permitAll()
+	        .antMatchers("/", "/signin", "/signup", "/css/**", "/js/**","/img/**","/login-verify",
+	                "/validate-otp").permitAll()
 	        .anyRequest().authenticated()
 	    )
 	    .formLogin(login -> login
 	        .loginPage("/signin")
-	        .loginProcessingUrl("/dologin")
-	        .defaultSuccessUrl("/user/index", true)
+	        //.defaultSuccessUrl("/user/index", true)
 	        .permitAll()
 	    )
 	    .logout(logout -> logout
