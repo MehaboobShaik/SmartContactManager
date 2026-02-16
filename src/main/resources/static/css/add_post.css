@@ -1,0 +1,33 @@
+.blog-section {
+	min-height: 100vh;
+	background:
+		linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+		url('https://images.unsplash.com/photo-1499750310107-5fef28a66643');
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	align-items: center;
+	padding: 40px 0;
+}
+
+.blog-card {
+	background: #1f1f1f;
+	padding: 35px;
+	border-radius: 15px;
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+	color: #ffffff;
+}
+
+.blog-card label {
+	font-weight: 500;
+}
+
+.publish-btn {
+	padding: 10px 30px;
+	border-radius: 30px;
+	transition: all 0.3s ease;
+}
+
+.publish-btn:hover {
+	background: #333333;
+}

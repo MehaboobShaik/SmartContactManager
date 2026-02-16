@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::Layout(~{::section})">
+
+<body>
+
+	<section class="container mt-4">
+
+		<div class="card p-4">
+
+			<h3 class="text-center mb-4">✍️ Write Blog</h3>
+
+			<form th:action="@{/user/blog/save}" method="post" th:object="${post}">
+
+				<!-- TITLE -->
+				<div class="form-group">
+					<label>Title</label>
+					<input type="text" class="form-control" th:field="*{title}" required>
+				</div>
+
+				<!-- CONTENT -->
+				<div class="form-group mt-3">
+					<label>Content</label>
+					<textarea class="form-control" rows="5" th:field="*{content}" required></textarea>
+				</div>
+
+				<!-- CATEGORY -->
+				<div class="form-group mt-3">
+
+					<label>Category</label>
+
+					<select class="form-control" name="categoryId" id="categorySelect" required>
+
+						<option value="">-- Select Category --</option>
+
+						<option th:each="cat : ${categories}" th:value="${cat.categoryId}"
+							th:text="${cat.categoryTitle}">
+						</option>
+
+					</select>
+
+					<small>
+						<a href="#" onclick="toggleCategoryBox()">
+							+ Add New Category
+						</a>
+					</small>
+				</div>
+
+				<!-- ADD NEW CATEGORY BOX -->
+				<div id="newCategoryBox" style="display:none; margin-top:15px;">
+
+					<input type="text" id="newCategoryTitle" class="form-control mb-2" placeholder="Category Title">
+
+					<input type="text" id="newCategoryDesc" class="form-control mb-2"
+						placeholder="Category Description">
+
+					<button type="button" class="btn btn-sm btn-dark" onclick="saveCategory()">
+						Save Category
+					</button>
+				</div>
+
+				<!-- SUBMIT -->
+				<div class="text-center mt-4">
+					<button class="btn btn-primary">
+						Publish Blog
+					</button>
+				</div>
+
+			</form>
+
+		</div>
+
+	</section>
+
+	<script>
+
+		function toggleCategoryBox() {
+			const box = document.getElementById("newCategoryBox");
+			box.style.display =
+				box.style.display === "none" ? "block" : "none";
+		}
+
+		function saveCategory() {
+
+			const title =
+				document.getElementById("newCategoryTitle").value;
+
+			const description =
+				document.getElementById("newCategoryDesc").value;
+
+			if (!title || !description) {
+				alert("Please fill all fields");
+				return;
+			}
+
+			fetch("/category/save", {
+				method: "POST",
+				headers: {
+					"Content-Type":
+						"application/x-www-form-urlencoded"
+				},
+				body: "title=" + encodeURIComponent(title)
+					+ "&description=" +
+					encodeURIComponent(description)
+			})
+				.then(response => response.json())
+				.then(data => {
+
+					const select =
+						document.getElementById("categorySelect");
+
+					const option =
+						document.createElement("option");
+
+					option.value = data.categoryId;
+					option.text = data.categoryTitle;
+
+					select.add(option);
+					select.value = data.categoryId;
+
+					alert("Category added successfully");
+
+					document.getElementById("newCategoryBox")
+						.style.display = "none";
+				})
+				.catch(error => {
+					console.error(error);
+					alert("Error saving category");
+				});
+		}
+
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="normal/base::Layout(~{::section})">
+
+<body>
+
+<section class="container mt-4">
+
+    <h2 class="text-center mb-4">📝 All Blogs</h2>
+
+    <div th:each="post : ${posts}" class="card mb-3 p-3">
+
+        <h4 th:text="${post.title}"></h4>
+
+        <p class="text-muted">
+            Category:
+            <span th:text="${post.category.categoryTitle}"></span>
+            |
+            Date:
+            <span th:text="${#dates.format(post.addedDate, 'dd-MM-yyyy')}"></span>
+        </p>
+
+        <p th:text="${post.content}"></p>
+
+    </div>
+
+</section>
+
+</body>
+</html>

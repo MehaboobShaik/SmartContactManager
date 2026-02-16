@@ -84,7 +84,7 @@
 										<p class="text-muted">
 											Create contacts easily
 										</p>
-										
+
 
 									</div>
 								</a>
@@ -114,6 +114,104 @@
 							</div>
 
 						</div>
+
+						<hr style="border-color:#444; margin:30px 0;">
+
+						<h4 class="text-center mb-4">📝 Blog Management</h4>
+
+						<div class="row">
+
+							<!-- WRITE BLOG -->
+							<div class="col-md-4 mb-3">
+								<a th:href="@{/user/blog/create}" style="text-decoration:none; color:inherit;">
+									<div style="
+						                padding:20px;
+						                border-radius:10px;
+						                background:#2a2a2a;
+						                cursor:pointer;
+						                transition:all 0.3s ease;
+						            " onmouseover="this.style.background='#3a3a3a'" onmouseout="this.style.background='#2a2a2a'">
+
+										<h3>📝</h3>
+										<h5>Write Blog</h5>
+										<p class="text-muted">
+											Create new blog posts
+										</p>
+
+									</div>
+								</a>
+							</div>
+
+							<!-- VIEW BLOGS -->
+							<div class="col-md-4 mb-3">
+								<a th:href="@{/user/blog/list}" style="text-decoration:none; color:inherit;">
+									<div style="
+						                padding:20px;
+						                border-radius:10px;
+						                background:#2a2a2a;
+						                cursor:pointer;
+						                transition:all 0.3s ease;
+						            " onmouseover="this.style.background='#3a3a3a'" onmouseout="this.style.background='#2a2a2a'">
+
+										<h3>📚</h3>
+										<h5>View Blogs</h5>
+										<p class="text-muted">
+											Manage your posts
+										</p>
+
+									</div>
+								</a>
+							</div>
+
+							<!-- CATEGORIES -->
+							<div class="col-md-4 mb-3">
+								<a th:href="@{/user/blog/categories}" style="text-decoration:none; color:inherit;">
+									<div style="
+						                padding:20px;
+						                border-radius:10px;
+						                background:#2a2a2a;
+						                cursor:pointer;
+						                transition:all 0.3s ease;
+						            " onmouseover="this.style.background='#3a3a3a'" onmouseout="this.style.background='#2a2a2a'">
+
+										<h3>🗂️</h3>
+										<h5>Categories</h5>
+										<p class="text-muted">
+											Organize blog topics
+										</p>
+
+									</div>
+								</a>
+							</div>
+
+						</div>
+
+						<div class="row justify-content-center">
+
+							<!-- COMMENTS -->
+							<div class="col-md-4 mb-3">
+								<a th:href="@{/user/blog/comments}" style="text-decoration:none; color:inherit;">
+									<div style="
+						                padding:20px;
+						                border-radius:10px;
+						                background:#2a2a2a;
+						                cursor:pointer;
+						                transition:all 0.3s ease;
+						            " onmouseover="this.style.background='#3a3a3a'" onmouseout="this.style.background='#2a2a2a'">
+
+										<h3>💬</h3>
+										<h5>Comments</h5>
+										<p class="text-muted">
+											Manage user comments
+										</p>
+
+									</div>
+								</a>
+							</div>
+
+						</div>
+
+
 						<!-- END QUICK ACTIONS -->
 
 					</div>
