@@ -455,3 +455,215 @@
 2026-02-15 10:10:45 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
 2026-02-15 10:10:45 [restartedMain] INFO  c.c.SmartContactManagerApplication - Started SmartContactManagerApplication in 1.485 seconds (JVM running for 361.979)
 2026-02-15 10:10:45 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-02-16 18:11:24 [restartedMain] INFO  c.c.SmartContactManagerApplication - Starting SmartContactManagerApplication using Java 17.0.8.1 on LAPTOP-AQ7PP45G with PID 20204 (C:\Users\ssubh\git_repo\SmartContactManager\target\classes started by ssubh in C:\Users\ssubh\git_repo\SmartContactManager)
+2026-02-16 18:11:24 [restartedMain] DEBUG c.c.SmartContactManagerApplication - Running with Spring Boot v2.7.4, Spring v5.3.23
+2026-02-16 18:11:24 [restartedMain] INFO  c.c.SmartContactManagerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-16 18:11:24 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\ssubh\.m2\repository\com\oracle\database\jdbc\ojdbc11\21.5.0.0\ojdbc11-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/ssubh/.m2/repository/com/oracle/database/jdbc/ojdbc11/21.5.0.0/oraclepki.jar
+2026-02-16 18:11:24 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-02-16 18:11:24 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-02-16 18:11:25 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-16 18:11:25 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 47 ms. Found 2 JPA repository interfaces.
+2026-02-16 18:11:25 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-02-16 18:11:25 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-16 18:11:25 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2026-02-16 18:11:25 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-16 18:11:25 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1444 ms
+2026-02-16 18:11:25 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-16 18:11:25 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.11.Final
+2026-02-16 18:11:26 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2026-02-16 18:11:26 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-16 18:11:26 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-16 18:11:26 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2026-02-16 18:11:27 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2026-02-16 18:11:27 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-16 18:11:27 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-16 18:11:28 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3e208e5d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1e60209d, org.springframework.security.web.context.SecurityContextPersistenceFilter@583097d5, org.springframework.security.web.header.HeaderWriterFilter@73e45b1d, org.springframework.security.web.authentication.logout.LogoutFilter@7702ea68, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6e560a37, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@60b593f0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@335e6eab, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6c2d2cbf, org.springframework.security.web.session.SessionManagementFilter@7d288c71, org.springframework.security.web.access.ExceptionTranslationFilter@23347c41, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6445440b]
+2026-02-16 18:11:28 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-02-16 18:11:28 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-02-16 18:11:28 [restartedMain] INFO  c.c.SmartContactManagerApplication - Started SmartContactManagerApplication in 4.769 seconds (JVM running for 5.789)
+2026-02-16 18:11:49 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-16 18:11:49 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-16 18:11:49 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2026-02-16 18:11:49 [http-nio-8080-exec-1] INFO  c.c.controllers.HomeController - Home page requested
+2026-02-16 18:11:49 [http-nio-8080-exec-1] INFO  c.c.controllers.HomeController - Home page requested
+2026-02-16 18:11:50 [http-nio-8080-exec-3] INFO  c.c.controllers.HomeController - Login page opened
+2026-02-16 18:11:51 [http-nio-8080-exec-4] INFO  c.c.controllers.HomeController - Login page opened
+2026-02-16 18:11:51 [http-nio-8080-exec-9] INFO  c.c.controllers.HomeController - Login page opened
+2026-02-16 18:11:52 [http-nio-8080-exec-6] INFO  c.c.c.OtpAuthValidatorController - Login attempt for user: ssubhanishaik6@gmail.com
+2026-02-16 18:11:53 [http-nio-8080-exec-6] INFO  c.c.c.OtpAuthValidatorController - Password verified successfully for user: ssubhanishaik6@gmail.com
+2026-02-16 18:11:53 [http-nio-8080-exec-6] DEBUG c.c.c.OtpAuthValidatorController - Generated OTP for user ssubhanishaik6@gmail.com: 605997
+2026-02-16 18:11:53 [http-nio-8080-exec-6] INFO  c.c.mailsender.EmailService - Preparing to send email to: ssubhanishaik6@gmail.com
+2026-02-16 18:12:00 [http-nio-8080-exec-6] INFO  c.c.mailsender.EmailService - Email sent successfully to: ssubhanishaik6@gmail.com
+2026-02-16 18:12:00 [http-nio-8080-exec-6] INFO  c.c.c.OtpAuthValidatorController - OTP sent successfully to user: ssubhanishaik6@gmail.com
+2026-02-16 18:12:00 [http-nio-8080-exec-2] INFO  c.c.controllers.HomeController - Login page opened
+2026-02-16 18:12:16 [http-nio-8080-exec-10] INFO  c.c.c.OtpAuthValidatorController - OTP verified successfully for user: ssubhanishaik6@gmail.com
+2026-02-16 18:12:16 [http-nio-8080-exec-10] INFO  c.c.c.OtpAuthValidatorController - User logged in successfully: ssubhanishaik6@gmail.com
+2026-02-16 18:12:16 [http-nio-8080-exec-1] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 18:12:16 [http-nio-8080-exec-1] INFO  c.c.controllers.HomeController - Dashboard accessed by user: ssubhanishaik6@gmail.com
+2026-02-16 18:12:19 [http-nio-8080-exec-3] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 18:12:19 [http-nio-8080-exec-3] INFO  c.c.controllers.HomeController - Add contact page opened
+2026-02-16 18:12:21 [http-nio-8080-exec-2] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 18:12:21 [http-nio-8080-exec-2] INFO  c.c.controllers.HomeController - Dashboard accessed by user: ssubhanishaik6@gmail.com
+2026-02-16 18:12:23 [http-nio-8080-exec-7] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 18:12:23 [http-nio-8080-exec-7] INFO  c.c.controllers.HomeController - Fetching contacts for user: ssubhanishaik6@gmail.com | Page: 0
+2026-02-16 18:12:25 [http-nio-8080-exec-5] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 18:12:25 [http-nio-8080-exec-5] INFO  c.c.controllers.HomeController - Dashboard accessed by user: ssubhanishaik6@gmail.com
+2026-02-16 18:13:15 [http-nio-8080-exec-2] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 18:13:15 [http-nio-8080-exec-2] INFO  c.c.controllers.HomeController - Fetching contacts for user: ssubhanishaik6@gmail.com | Page: 0
+2026-02-16 18:13:16 [http-nio-8080-exec-3] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 18:13:16 [http-nio-8080-exec-3] INFO  c.c.controllers.HomeController - Dashboard accessed by user: ssubhanishaik6@gmail.com
+2026-02-16 18:13:19 [http-nio-8080-exec-5] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 18:13:19 [http-nio-8080-exec-5] INFO  c.c.controllers.HomeController - Add contact page opened
+2026-02-16 18:13:26 [http-nio-8080-exec-7] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 18:13:26 [http-nio-8080-exec-7] INFO  c.c.controllers.HomeController - Adding contact for user: ssubhanishaik6@gmail.com
+2026-02-16 18:13:26 [http-nio-8080-exec-7] INFO  c.c.controllers.HomeController - Contact added successfully for user: ssubhanishaik6@gmail.com
+2026-02-16 18:13:28 [http-nio-8080-exec-9] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 18:13:28 [http-nio-8080-exec-9] INFO  c.c.controllers.HomeController - Dashboard accessed by user: ssubhanishaik6@gmail.com
+2026-02-16 18:20:05 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-02-16 18:20:05 [Thread-8] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-02-16 18:20:05 [Thread-8] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2026-02-16 18:20:05 [Thread-8] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-16 18:20:05 [Thread-8] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-16 18:20:05 [Thread-8] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-16 18:20:05 [restartedMain] INFO  c.c.SmartContactManagerApplication - Starting SmartContactManagerApplication using Java 17.0.8.1 on LAPTOP-AQ7PP45G with PID 20204 (C:\Users\ssubh\git_repo\SmartContactManager\target\classes started by ssubh in C:\Users\ssubh\git_repo\SmartContactManager)
+2026-02-16 18:20:05 [restartedMain] DEBUG c.c.SmartContactManagerApplication - Running with Spring Boot v2.7.4, Spring v5.3.23
+2026-02-16 18:20:05 [restartedMain] INFO  c.c.SmartContactManagerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-16 18:20:06 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-16 18:20:06 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 29 ms. Found 2 JPA repository interfaces.
+2026-02-16 18:20:06 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-02-16 18:20:06 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-16 18:20:06 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2026-02-16 18:20:06 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-16 18:20:06 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 721 ms
+2026-02-16 18:20:06 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-16 18:20:06 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2026-02-16 18:20:06 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2026-02-16 18:20:06 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2026-02-16 18:20:06 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2026-02-16 18:20:06 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-16 18:20:06 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-16 18:20:06 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3d4e9e75, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@21d93845, org.springframework.security.web.context.SecurityContextPersistenceFilter@18d95511, org.springframework.security.web.header.HeaderWriterFilter@2aa19e99, org.springframework.security.web.authentication.logout.LogoutFilter@1f252a5f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@34e60d11, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4c7176a9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6a827ce8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@60c4e410, org.springframework.security.web.session.SessionManagementFilter@484dfdd6, org.springframework.security.web.access.ExceptionTranslationFilter@2ddf247f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1b7b44fa]
+2026-02-16 18:20:06 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-02-16 18:20:06 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-02-16 18:20:06 [restartedMain] INFO  c.c.SmartContactManagerApplication - Started SmartContactManagerApplication in 1.315 seconds (JVM running for 524.202)
+2026-02-16 18:20:06 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-02-16 18:22:57 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2026-02-16 18:22:57 [Thread-22] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-02-16 18:22:57 [Thread-22] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-16 18:22:57 [Thread-22] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2026-02-16 18:22:57 [Thread-22] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2026-02-16 18:22:57 [restartedMain] INFO  c.c.SmartContactManagerApplication - Starting SmartContactManagerApplication using Java 17.0.8.1 on LAPTOP-AQ7PP45G with PID 20204 (C:\Users\ssubh\git_repo\SmartContactManager\target\classes started by ssubh in C:\Users\ssubh\git_repo\SmartContactManager)
+2026-02-16 18:22:57 [restartedMain] DEBUG c.c.SmartContactManagerApplication - Running with Spring Boot v2.7.4, Spring v5.3.23
+2026-02-16 18:22:57 [restartedMain] INFO  c.c.SmartContactManagerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-16 18:22:58 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-16 18:22:58 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 2 JPA repository interfaces.
+2026-02-16 18:22:58 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-02-16 18:22:58 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-16 18:22:58 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2026-02-16 18:22:58 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-16 18:22:58 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 657 ms
+2026-02-16 18:22:58 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-16 18:22:58 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+2026-02-16 18:22:58 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+2026-02-16 18:22:58 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2026-02-16 18:22:58 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2026-02-16 18:22:58 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-16 18:22:58 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-16 18:22:58 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@17143d47, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@102f48a7, org.springframework.security.web.context.SecurityContextPersistenceFilter@1d28f255, org.springframework.security.web.header.HeaderWriterFilter@385be68f, org.springframework.security.web.authentication.logout.LogoutFilter@577de958, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7192bf2a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@12a1b4fe, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@75a957bb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@534022bd, org.springframework.security.web.session.SessionManagementFilter@6563a5f7, org.springframework.security.web.access.ExceptionTranslationFilter@6e5c2b4d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@37ce9c5b]
+2026-02-16 18:22:59 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-02-16 18:22:59 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-02-16 18:22:59 [restartedMain] INFO  c.c.SmartContactManagerApplication - Started SmartContactManagerApplication in 1.254 seconds (JVM running for 696.314)
+2026-02-16 18:22:59 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-02-16 18:23:59 [RMI TCP Connection(28)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2026-02-16 18:23:59 [RMI TCP Connection(28)-127.0.0.1] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-02-16 18:23:59 [RMI TCP Connection(28)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-16 18:23:59 [RMI TCP Connection(28)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+2026-02-16 18:23:59 [RMI TCP Connection(28)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
+2026-02-16 18:24:22 [restartedMain] INFO  c.c.SmartContactManagerApplication - Starting SmartContactManagerApplication using Java 17.0.8.1 on LAPTOP-AQ7PP45G with PID 1160 (C:\Users\ssubh\git_repo\SmartContactManager\target\classes started by ssubh in C:\Users\ssubh\git_repo\SmartContactManager)
+2026-02-16 18:24:22 [restartedMain] DEBUG c.c.SmartContactManagerApplication - Running with Spring Boot v2.7.4, Spring v5.3.23
+2026-02-16 18:24:22 [restartedMain] INFO  c.c.SmartContactManagerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-16 18:24:22 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\ssubh\.m2\repository\com\oracle\database\jdbc\ojdbc11\21.5.0.0\ojdbc11-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/ssubh/.m2/repository/com/oracle/database/jdbc/ojdbc11/21.5.0.0/oraclepki.jar
+2026-02-16 18:24:22 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-02-16 18:24:22 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-02-16 18:24:23 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-16 18:24:23 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 49 ms. Found 2 JPA repository interfaces.
+2026-02-16 18:24:24 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-02-16 18:24:24 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-16 18:24:24 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2026-02-16 18:24:24 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-16 18:24:24 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1478 ms
+2026-02-16 18:24:24 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-16 18:24:24 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.11.Final
+2026-02-16 18:24:24 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2026-02-16 18:24:24 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-16 18:24:25 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-16 18:24:25 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2026-02-16 18:24:26 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2026-02-16 18:24:26 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-16 18:24:26 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-16 18:24:26 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@39c35802, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@714749f5, org.springframework.security.web.context.SecurityContextPersistenceFilter@dcb6c18, org.springframework.security.web.header.HeaderWriterFilter@40f2cbcd, org.springframework.security.web.authentication.logout.LogoutFilter@7824912e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4521d7c8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@63baed75, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@8e401be, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5b2c9233, org.springframework.security.web.session.SessionManagementFilter@45215056, org.springframework.security.web.access.ExceptionTranslationFilter@78b7b5d8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@56145a24]
+2026-02-16 18:24:27 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-02-16 18:24:27 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-02-16 18:24:27 [restartedMain] INFO  c.c.SmartContactManagerApplication - Started SmartContactManagerApplication in 4.788 seconds (JVM running for 5.858)
+2026-02-16 18:24:37 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-16 18:24:37 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-16 18:24:37 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2026-02-16 18:24:37 [http-nio-8080-exec-1] INFO  c.c.controllers.HomeController - Home page requested
+2026-02-16 18:24:37 [http-nio-8080-exec-1] INFO  c.c.controllers.HomeController - Home page requested
+2026-02-16 18:24:39 [http-nio-8080-exec-7] INFO  c.c.controllers.HomeController - Login page opened
+2026-02-16 18:24:41 [http-nio-8080-exec-10] INFO  c.c.c.OtpAuthValidatorController - Login attempt for user: ssubhanishaik6@gmail.com
+2026-02-16 18:24:41 [http-nio-8080-exec-10] INFO  c.c.c.OtpAuthValidatorController - Password verified successfully for user: ssubhanishaik6@gmail.com
+2026-02-16 18:24:41 [http-nio-8080-exec-10] DEBUG c.c.c.OtpAuthValidatorController - Generated OTP for user ssubhanishaik6@gmail.com: 842866
+2026-02-16 18:24:41 [http-nio-8080-exec-10] INFO  c.c.mailsender.EmailService - Preparing to send email to: ssubhanishaik6@gmail.com
+2026-02-16 18:24:46 [http-nio-8080-exec-10] INFO  c.c.mailsender.EmailService - Email sent successfully to: ssubhanishaik6@gmail.com
+2026-02-16 18:24:46 [http-nio-8080-exec-10] INFO  c.c.c.OtpAuthValidatorController - OTP sent successfully to user: ssubhanishaik6@gmail.com
+2026-02-16 18:24:59 [http-nio-8080-exec-3] INFO  c.c.c.OtpAuthValidatorController - OTP verified successfully for user: ssubhanishaik6@gmail.com
+2026-02-16 18:24:59 [http-nio-8080-exec-3] INFO  c.c.c.OtpAuthValidatorController - User logged in successfully: ssubhanishaik6@gmail.com
+2026-02-16 18:24:59 [http-nio-8080-exec-5] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 18:24:59 [http-nio-8080-exec-5] INFO  c.c.controllers.HomeController - Dashboard accessed by user: ssubhanishaik6@gmail.com
+2026-02-16 18:25:03 [http-nio-8080-exec-9] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 18:25:03 [http-nio-8080-exec-9] INFO  c.c.controllers.HomeController - Fetching contacts for user: ssubhanishaik6@gmail.com | Page: 0
+2026-02-16 18:25:05 [http-nio-8080-exec-4] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 18:25:05 [http-nio-8080-exec-4] INFO  c.c.controllers.HomeController - Dashboard accessed by user: ssubhanishaik6@gmail.com
+2026-02-16 18:25:07 [http-nio-8080-exec-5] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 18:25:07 [http-nio-8080-exec-5] INFO  c.c.controllers.HomeController - Add contact page opened
+2026-02-16 18:25:09 [http-nio-8080-exec-2] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 18:25:09 [http-nio-8080-exec-2] INFO  c.c.controllers.HomeController - Dashboard accessed by user: ssubhanishaik6@gmail.com
+2026-02-16 18:25:11 [http-nio-8080-exec-4] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 18:25:17 [http-nio-8080-exec-5] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 18:25:28 [http-nio-8080-exec-2] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 18:25:35 [http-nio-8080-exec-3] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 18:25:44 [http-nio-8080-exec-9] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 18:25:56 [http-nio-8080-exec-10] DEBUG c.c.controllers.HomeController - Common user data added for: ssubhanishaik6@gmail.com
+2026-02-16 18:25:56 [http-nio-8080-exec-10] INFO  c.c.controllers.HomeController - Dashboard accessed by user: ssubhanishaik6@gmail.com
+2026-02-16 18:26:04 [http-nio-8080-exec-8] INFO  c.c.controllers.HomeController - Login page opened
+2026-02-16 18:26:08 [http-nio-8080-exec-1] INFO  c.c.c.OtpAuthValidatorController - Login attempt for user: subhanishaikjdev1271@gmail.com
+2026-02-16 18:26:08 [http-nio-8080-exec-1] INFO  c.c.c.OtpAuthValidatorController - Password verified successfully for user: subhanishaikjdev1271@gmail.com
+2026-02-16 18:26:08 [http-nio-8080-exec-1] DEBUG c.c.c.OtpAuthValidatorController - Generated OTP for user subhanishaikjdev1271@gmail.com: 975230
+2026-02-16 18:26:08 [http-nio-8080-exec-1] INFO  c.c.mailsender.EmailService - Preparing to send email to: subhanishaikjdev1271@gmail.com
+2026-02-16 18:26:12 [http-nio-8080-exec-1] INFO  c.c.mailsender.EmailService - Email sent successfully to: subhanishaikjdev1271@gmail.com
+2026-02-16 18:26:12 [http-nio-8080-exec-1] INFO  c.c.c.OtpAuthValidatorController - OTP sent successfully to user: subhanishaikjdev1271@gmail.com
+2026-02-16 18:26:27 [http-nio-8080-exec-3] INFO  c.c.c.OtpAuthValidatorController - OTP verified successfully for user: subhanishaikjdev1271@gmail.com
+2026-02-16 18:26:27 [http-nio-8080-exec-3] INFO  c.c.c.OtpAuthValidatorController - User logged in successfully: subhanishaikjdev1271@gmail.com
+2026-02-16 18:26:27 [http-nio-8080-exec-6] DEBUG c.c.controllers.HomeController - Common user data added for: subhanishaikjdev1271@gmail.com
+2026-02-16 18:26:27 [http-nio-8080-exec-6] INFO  c.c.controllers.HomeController - Dashboard accessed by user: subhanishaikjdev1271@gmail.com
+2026-02-16 18:26:32 [http-nio-8080-exec-7] DEBUG c.c.controllers.HomeController - Common user data added for: subhanishaikjdev1271@gmail.com
+2026-02-16 18:26:32 [http-nio-8080-exec-7] INFO  c.c.controllers.HomeController - Fetching contacts for user: subhanishaikjdev1271@gmail.com | Page: 0
+2026-02-16 18:26:32 [http-nio-8080-exec-7] INFO  c.c.controllers.HomeController - No contacts found for user: subhanishaikjdev1271@gmail.com
+2026-02-16 18:26:34 [http-nio-8080-exec-2] DEBUG c.c.controllers.HomeController - Common user data added for: subhanishaikjdev1271@gmail.com
+2026-02-16 18:26:34 [http-nio-8080-exec-2] INFO  c.c.controllers.HomeController - Dashboard accessed by user: subhanishaikjdev1271@gmail.com
+2026-02-16 18:26:36 [http-nio-8080-exec-3] DEBUG c.c.controllers.HomeController - Common user data added for: subhanishaikjdev1271@gmail.com
+2026-02-16 18:26:36 [http-nio-8080-exec-3] INFO  c.c.controllers.HomeController - Add contact page opened
+2026-02-16 18:26:38 [http-nio-8080-exec-7] DEBUG c.c.controllers.HomeController - Common user data added for: subhanishaikjdev1271@gmail.com
+2026-02-16 18:26:38 [http-nio-8080-exec-7] INFO  c.c.controllers.HomeController - Dashboard accessed by user: subhanishaikjdev1271@gmail.com
+2026-02-16 18:26:39 [http-nio-8080-exec-2] DEBUG c.c.controllers.HomeController - Common user data added for: subhanishaikjdev1271@gmail.com
+2026-02-16 18:26:45 [http-nio-8080-exec-3] DEBUG c.c.controllers.HomeController - Common user data added for: subhanishaikjdev1271@gmail.com
+2026-02-16 18:26:48 [http-nio-8080-exec-8] DEBUG c.c.controllers.HomeController - Common user data added for: subhanishaikjdev1271@gmail.com
+2026-02-16 18:26:48 [http-nio-8080-exec-8] INFO  c.c.controllers.HomeController - Dashboard accessed by user: subhanishaikjdev1271@gmail.com
+2026-02-16 18:26:50 [http-nio-8080-exec-2] INFO  c.c.controllers.HomeController - Login page opened
+2026-02-16 18:27:08 [RMI TCP Connection(12)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2026-02-16 18:27:08 [RMI TCP Connection(12)-127.0.0.1] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-02-16 18:27:08 [RMI TCP Connection(12)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2026-02-16 18:27:08 [RMI TCP Connection(12)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-16 18:27:08 [RMI TCP Connection(12)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-16 18:27:08 [RMI TCP Connection(12)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
