@@ -92,23 +92,19 @@
 
 							<!-- SEARCH CONTACTS -->
 							<div class="col-md-4 mb-3">
-								<a th:href="@{/user/show_contacts/{page}(page=0)}"
-									style="text-decoration:none; color:inherit;">
+								<a th:href="@{/user/search_contact_form}" style="text-decoration:none; color:inherit;">
 									<div style="
-                                    padding:20px;
-                                    border-radius:10px;
-                                    background:#2a2a2a;
-                                    cursor:pointer;
-                                    transition:all 0.3s ease;
-                                " onmouseover="this.style.background='#3a3a3a'"
+														            padding:20px;
+														            border-radius:10px;
+														            background:#2a2a2a;
+														            cursor:pointer;
+														            transition:all 0.3s ease;" onmouseover="this.style.background='#3a3a3a'"
 										onmouseout="this.style.background='#2a2a2a'">
-
+							
 										<h3>🔍</h3>
 										<h5>Search Contacts</h5>
-										<p class="text-muted">
-											Find contacts instantly
-										</p>
-
+										<p class="text-muted">Find contacts instantly</p>
+							
 									</div>
 								</a>
 							</div>
