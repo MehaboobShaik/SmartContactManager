@@ -6,21 +6,75 @@
 
 <section class="container mt-4">
 
-    <h2 class="text-center mb-4">📝 All Blogs</h2>
+    <!-- Page Title -->
+	<div class="text-center mb-4">
+	    <h2 class="text-white">📝 All Blogs</h2>
+	    <p class="text-white">Explore all your published blogs</p>
+	</div>
 
-    <div th:each="post : ${posts}" class="card mb-3 p-3">
+    <!-- Empty State -->
+    <div th:if="${#lists.isEmpty(posts)}"
+         class="alert alert-info text-center">
+        No blogs available yet. Start writing one!
+    </div>
 
-        <h4 th:text="${post.title}"></h4>
+    <!-- Blog Cards -->
+    <div class="row" th:if="${!#lists.isEmpty(posts)}">
 
-        <p class="text-muted">
-            Category:
-            <span th:text="${post.category.categoryTitle}"></span>
-            |
-            Date:
-            <span th:text="${#dates.format(post.addedDate, 'dd-MM-yyyy')}"></span>
-        </p>
+        <div class="col-md-6 col-lg-4 mb-4"
+             th:each="post : ${posts}">
 
-        <p th:text="${post.content}"></p>
+            <div class="card h-100 shadow-sm">
+
+                <div class="card-body">
+
+                    <!-- Title -->
+                    <h5 class="card-title"
+                        th:text="${post.title}">
+                    </h5>
+
+                    <!-- Category + Date -->
+                    <p class="text-muted small mb-2">
+
+                        <!-- SAFE CATEGORY -->
+                        <span class="badge badge-primary"
+                              th:text="${post.category != null ? post.category.categoryTitle : 'No Category'}">
+                        </span>
+
+                        |
+
+                        <!-- SAFE DATE -->
+                        <span th:text="${post.addedDate != null ? #dates.format(post.addedDate,'dd MMM yyyy') : 'N/A'}">
+                        </span>
+
+                    </p>
+
+                    <!-- Content Preview -->
+                    <p class="card-text"
+                       th:text="${#strings.abbreviate(post.content, 120)}">
+                    </p>
+
+                </div>
+
+                <!-- Footer -->
+                <div class="card-footer bg-white border-0 d-flex justify-content-between">
+
+                    <!-- Read More (optional future) -->
+					<a th:href="@{'/user/blog/' + ${post.postId}}"
+					   class="btn btn-sm btn-outline-primary">
+					    Read More
+					</a>
+
+                    <!-- Author -->
+                    <small class="text-muted"
+                           th:text="${post.user != null ? post.user.name : 'Unknown'}">
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
 

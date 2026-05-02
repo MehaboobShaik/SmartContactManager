@@ -29,16 +29,15 @@
 					<label>Category</label>
 
 					<select class="form-control" name="categoryId" id="categorySelect" required>
-
 						<option value="">-- Select Category --</option>
 
 						<option th:each="cat : ${categories}" th:value="${cat.categoryId}"
 							th:text="${cat.categoryTitle}">
 						</option>
-
 					</select>
 
 					<small>
+						<!-- ✅ NO JS issue now -->
 						<a href="#" onclick="toggleCategoryBox()">
 							+ Add New Category
 						</a>
@@ -70,65 +69,6 @@
 		</div>
 
 	</section>
-
-	<script>
-
-		function toggleCategoryBox() {
-			const box = document.getElementById("newCategoryBox");
-			box.style.display =
-				box.style.display === "none" ? "block" : "none";
-		}
-
-		function saveCategory() {
-
-			const title =
-				document.getElementById("newCategoryTitle").value;
-
-			const description =
-				document.getElementById("newCategoryDesc").value;
-
-			if (!title || !description) {
-				alert("Please fill all fields");
-				return;
-			}
-
-			fetch("/category/save", {
-				method: "POST",
-				headers: {
-					"Content-Type":
-						"application/x-www-form-urlencoded"
-				},
-				body: "title=" + encodeURIComponent(title)
-					+ "&description=" +
-					encodeURIComponent(description)
-			})
-				.then(response => response.json())
-				.then(data => {
-
-					const select =
-						document.getElementById("categorySelect");
-
-					const option =
-						document.createElement("option");
-
-					option.value = data.categoryId;
-					option.text = data.categoryTitle;
-
-					select.add(option);
-					select.value = data.categoryId;
-
-					alert("Category added successfully");
-
-					document.getElementById("newCategoryBox")
-						.style.display = "none";
-				})
-				.catch(error => {
-					console.error(error);
-					alert("Error saving category");
-				});
-		}
-
-	</script>
 
 </body>
 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::Layout(~{::section})">
+
+<body>
+
+	<section class="container mt-4">
+
+		<div class="card p-4 shadow">
+
+			<!-- Title -->
+			<h2 th:text="${post.title}"></h2>
+
+			<!-- Category + Date -->
+			<p class="text-muted">
+
+				<span class="badge badge-primary"
+					th:text="${post.category != null ? post.category.categoryTitle : 'No Category'}">
+				</span>
+
+				|
+
+				<span th:text="${#dates.format(post.addedDate,'dd MMM yyyy')}"></span>
+
+			</p>
+
+			<!-- Content -->
+			<p th:text="${post.content}"></p>
+
+			<!-- Back button -->
+			<a th:href="@{/user/blog/list}" class="btn btn-secondary mt-3">
+				← Back
+			</a>
+
+		</div>
+
+	</section>
+
+</body>
+
+</html>

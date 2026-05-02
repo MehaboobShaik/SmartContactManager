@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import com.contactManager.entities.Category;
 import com.contactManager.entities.Post;
 import com.contactManager.entities.User;
 import com.contactManager.helper.Message;
@@ -27,7 +28,7 @@ public class BlogController {
 
 	@Autowired
 	private UserRepository userRepository;
-	
+
 	@Autowired
 	private CategoryRepository categoryRepository;
 
@@ -35,14 +36,14 @@ public class BlogController {
 	@GetMapping("/create")
 	public String openWriteBlog(Model model) {
 		model.addAttribute("post", new Post());
-		    model.addAttribute("categories", categoryRepository.findAll());
+		model.addAttribute("categories", categoryRepository.findAll());
 
 		return "blog/add_post";
 	}
 
-	// 🔹 Save Blog
 	@PostMapping("/save")
-	public String saveBlog(@ModelAttribute Post post, Principal principal, HttpSession session) {
+	public String saveBlog(@ModelAttribute Post post, @RequestParam("categoryId") int categoryId, Principal principal,
+			HttpSession session) {
 
 		try {
 
@@ -60,28 +61,47 @@ public class BlogController {
 
 			User user = optionalUser.get();
 
+			// ✅ SET USER
 			post.setUser(user);
 
+			// ✅ SET CATEGORY (THIS WAS MISSING)
+			Category category = categoryRepository.findById(categoryId)
+					.orElseThrow(() -> new RuntimeException("Category not found"));
+
+			post.setCategory(category);
+
+			// ✅ SAVE
 			postRepository.save(post);
 
 			session.setAttribute("message", new Message("Blog published successfully!", "alert-success"));
 
 		} catch (Exception e) {
+			e.printStackTrace();
+
 			session.setAttribute("message", new Message("Error: " + e.getMessage(), "alert-danger"));
 		}
 
 		return "redirect:/user/blog/list";
 	}
-	
-	
+
 	// ================= LIST BLOGS =================
-    @GetMapping("/list")
-    public String listBlogs(Model model) {
+	@GetMapping("/list")
+	public String listBlogs(Model model) {
 
-        List<Post> posts = postRepository.findAll();
+		List<Post> posts = postRepository.findAll();
 
-        model.addAttribute("posts", posts);
+		model.addAttribute("posts", posts);
 
-        return "normal/blog_list";
-    }
+		return "blog/blog_list";
+	}
+
+	@GetMapping("/{postId}")
+	public String viewBlog(@PathVariable("postId") int postId, Model model) {
+
+		Post post = postRepository.findById(postId).orElseThrow(() -> new RuntimeException("Post not found"));
+
+		model.addAttribute("post", post);
+
+		return "blog/blog_details";
+	}
 }
