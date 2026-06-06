@@ -37,6 +37,26 @@
 				<th:block th:text="${#session.removeAttribute('message')}"></th:block>
 			</div>
 
+<!-- Close button top-right corner -->
+<button onclick="window.location.href='/user/index';" style="
+            position: absolute;
+            right: 632px;
+            width: 25px;
+            height: 25px;
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            padding: 0;
+            line-height: 25px;
+            text-align: center;
+        ">
+	&times;
+</button>
+    
+
 			<!-- CONTACT TABLE CARD -->
 			<div style="
         background:#1f1f1f;

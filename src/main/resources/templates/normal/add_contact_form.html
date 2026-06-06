@@ -11,13 +11,36 @@
     <div class="form-card">
 
         <h2 class="text-center mb-3">➕ Add Contact</h2>
+        
+				<!-- SESSION MESSAGE -->
+				<div th:if="${session.message}" class="alert" th:classappend="${session.message.type}">
+					<p th:text="${session.message.content}"></p>
+					<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+				</div>
 
         <!-- THEME TOGGLE -->
         <div class="text-right mb-3">
             <button onclick="toggleTheme()" class="btn btn-sm btn-dark">
                 🌙 / ☀️ Toggle Theme
             </button>
+            
+            <button onclick="window.location.href='/user/index';" style="
+				      width: 25px;
+				      height: 32px;
+				      background-color: red;
+				      color: white;
+				      font-weight: bold;
+				      border: none;
+				      border-radius: 3px;
+				      cursor: pointer;
+				      padding: 0;
+				      line-height: 25px;
+				      text-align: center;
+				    ">
+				&times;
+			</button>
         </div>
+        
 
         <form th:action="@{/user/process-contact}"
               th:object="${contact}"

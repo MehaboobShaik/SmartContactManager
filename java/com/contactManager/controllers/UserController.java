@@ -353,4 +353,48 @@ public class UserController {
 			contact.setDescription(clean);
 		}
 	}
+	
+	/*
+	 * ========================= Mapping for Search Contacts page =========================
+	 */
+    @GetMapping("/search_contact_form")
+    public String searchContactPage() {
+        
+        return "normal/search_contact";
+    }
+    
+    
+    @GetMapping("/search_contact")
+    public String searchContact(
+            @RequestParam("query") String query,
+            @RequestParam(value = "page", defaultValue = "0") int page,
+            Principal principal,
+            Model model) {
+
+        // Get logged-in user email
+        String email = principal.getName();
+
+        Optional<User> optionalUser = userRepository.findByEmail(email);
+
+        if (!optionalUser.isPresent()) {
+            return "redirect:/signin";
+        }
+
+        User user = optionalUser.get();
+
+        Pageable pageable = PageRequest.of(page, 5);
+
+        Page<Contact> results =
+                contactRepository.findByNameContainingIgnoreCaseAndUser(query, user, pageable);
+
+        model.addAttribute("contacts", results);
+        model.addAttribute("currentPage", page);
+        model.addAttribute("query", query);
+
+        return "normal/search_contact";
+    }
+
+
+	
+	
 }
