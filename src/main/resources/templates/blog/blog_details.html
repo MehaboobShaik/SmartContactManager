@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::Layout(~{::section})">
+
+<body>
+
+	<section class="container mt-4">
+
+		<!-- HERO IMAGE -->
+		<div class="rounded-4 overflow-hidden mb-4 shadow">
+			<img src="https://source.unsplash.com/1200x400/?blog,technology" class="img-fluid w-100"
+				style="height:350px; object-fit:cover;">
+		</div>
+
+		<!-- BLOG CONTENT -->
+		<div class="bg-white text-dark p-4 p-md-5 rounded-4 shadow-lg">
+
+			<!-- CATEGORY + DATE -->
+			<div class="mb-3">
+				<span class="badge bg-primary fs-6"
+					th:text="${post.category != null ? post.category.categoryTitle : 'No Category'}">
+				</span>
+
+				<span class="text-muted ms-2">
+					• <span th:text="${#dates.format(post.addedDate,'dd MMM yyyy')}"></span>
+				</span>
+			</div>
+
+			<!-- TITLE -->
+			<h1 class="fw-bold mb-4" th:text="${post.title}">
+			</h1>
+
+			<!-- AUTHOR -->
+			<p class="text-muted mb-4">
+				By <strong th:text="${post.user != null ? post.user.name : 'Unknown'}"></strong>
+			</p>
+
+			<!-- CONTENT -->
+			<div class="blog-content fs-5" th:text="${post.content}">
+			</div>
+
+			<!-- BACK BUTTON -->
+			<div class="mt-5">
+				<a th:href="@{/user/blog/list}" class="btn btn-outline-dark rounded-pill px-4">
+					← Back to Blogs
+				</a>
+			</div>
+
+		</div>
+
+	</section>
+
+	<!-- Extra styling moved to /static/css/add_post.css -->
+
+</body>
+
+</html>

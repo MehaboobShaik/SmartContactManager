@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::Layout(~{::section})">
+
+<body>
+
+	<section class="container mt-5">
+
+		<!-- Page Title -->
+		<div class="text-center mb-5">
+			<h2 class="fw-bold text-white">📝 All Blogs</h2>
+			<p class="text-light">Explore trending and latest blogs</p>
+		</div>
+
+		<!-- Empty State -->
+		<div th:if="${#lists.isEmpty(posts)}" class="alert alert-info text-center">
+			No blogs available yet. Start writing one!
+		</div>
+
+		<div class="row" th:if="${!#lists.isEmpty(posts)}">
+
+			<!-- LEFT SIDE (FEATURED BLOG) -->
+			<div class="col-lg-8 mb-4">
+
+				<div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+
+					<!-- Image -->
+					<img src="https://source.unsplash.com/900x400/?blog,writing" class="img-fluid"
+						style="height:300px; object-fit:cover;">
+
+					<div class="card-body p-4">
+
+						<!-- Title -->
+						<h3 class="fw-bold" th:text="${posts[0].title}">
+						</h3>
+
+						<!-- Meta -->
+						<p class="text-muted small">
+							<span class="badge bg-primary"
+								th:text="${posts[0].category != null ? posts[0].category.categoryTitle : 'No Category'}"></span>
+							|
+							<span th:text="${#dates.format(posts[0].addedDate,'dd MMM yyyy')}"></span>
+						</p>
+
+						<!-- Content -->
+						<p class="text-secondary" th:text="${#strings.abbreviate(posts[0].content, 200)}">
+						</p>
+
+						<!-- Button -->
+						<a th:href="@{'/user/blog/' + ${posts[0].postId}}" class="btn btn-dark rounded-pill px-4">
+							Read More →
+						</a>
+
+					</div>
+				</div>
+
+			</div>
+
+			<!-- RIGHT SIDE (TRENDING) -->
+			<div class="col-lg-4">
+
+				<div class="p-3 rounded-4 shadow-sm"
+					style="background: linear-gradient(135deg,#4b6cb7,#182848); color:white;">
+
+					<h5 class="fw-bold mb-3">🔥 Trending</h5>
+
+					<div th:each="post, iterStat : ${posts}" th:if="${iterStat.index > 0 && iterStat.index < 5}"
+						class="d-flex mb-3 align-items-center">
+
+						<!-- Small Image -->
+						<img src="https://source.unsplash.com/100x100/?article" class="rounded-3 me-3"
+							style="width:70px;height:70px;object-fit:cover;">
+
+						<div>
+							<h6 class="mb-1 small fw-semibold" th:text="${post.title}"></h6>
+
+							<a th:href="@{'/user/blog/' + ${post.postId}}" class="text-warning small">
+								Read →
+							</a>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- ALL BLOG CARDS -->
+		<div class="row mt-4">
+
+			<div class="col-md-6 col-lg-4 mb-4" th:each="post : ${posts}">
+
+				<div class="card border-0 shadow-sm rounded-4 h-100 blog-card">
+
+					<!-- Image -->
+					<img src="https://source.unsplash.com/400x250/?technology,blog" class="card-img-top rounded-top-4"
+						style="height:200px; object-fit:cover;">
+
+					<div class="card-body">
+
+						<h5 class="fw-semibold" th:text="${post.title}">
+						</h5>
+
+						<p class="text-muted small">
+							<span class="badge bg-primary"
+								th:text="${post.category != null ? post.category.categoryTitle : 'No Category'}"></span>
+							|
+							<span th:text="${#dates.format(post.addedDate,'dd MMM yyyy')}"></span>
+						</p>
+
+						<p class="text-secondary" th:text="${#strings.abbreviate(post.content, 100)}">
+						</p>
+
+					</div>
+
+					<div class="card-footer bg-white border-0 d-flex justify-content-between align-items-center">
+
+						<a th:href="@{'/user/blog/' + ${post.postId}}" class="btn btn-sm btn-outline-dark rounded-pill">
+							Read More
+						</a>
+
+						<small class="text-muted" th:text="${post.user != null ? post.user.name : 'Unknown'}">
+						</small>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</section>
+
+	<!-- Extra styling moved to /static/css/add_post.css -->
+
+</body>
+
+</html>

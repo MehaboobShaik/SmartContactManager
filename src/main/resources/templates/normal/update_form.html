@@ -112,26 +112,10 @@
 			</div>
 		</div>
 
-		<!-- TINYMCE -->
+		<!-- TinyMCE library is included here; initialization moved to /static/js/add_post.js -->
 		<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-		<script>
-			tinymce.init({
-				selector: '#mytextarea',
-				height: 120   // 🔥 IMPORTANT
-			});
-		</script>
 
-
-		<!-- IMAGE PREVIEW SCRIPT -->
-		<script>
-			function previewImage(event) {
-				const reader = new FileReader();
-				reader.onload = function () {
-					document.getElementById('imgPreview').src = reader.result;
-				}
-				reader.readAsDataURL(event.target.files[0]);
-			}
-		</script>
+		<!-- Image preview handled by /static/js/script.js -->
 
 	</section>
 
