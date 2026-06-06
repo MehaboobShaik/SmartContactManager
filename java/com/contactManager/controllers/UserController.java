@@ -27,6 +27,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.contactManager.entities.Contact;
 import com.contactManager.entities.User;
@@ -35,6 +36,11 @@ import com.contactManager.repositories.ContactRepository;
 import com.contactManager.repositories.UserRepository;
 
 import lombok.extern.slf4j.Slf4j;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Collections;
 
 @Controller
 @RequestMapping("/user")
@@ -393,6 +399,43 @@ public class UserController {
 
         return "normal/search_contact";
     }
+
+	/**
+	 * AJAX endpoint for live search suggestions. Returns a small JSON array of matching contacts
+	 * (id, name, email, phone) for the logged-in user.
+	 */
+	@GetMapping("/search_suggest")
+	@ResponseBody
+	public List<Map<String, Object>> searchSuggest(@RequestParam("query") String query, Principal principal) {
+
+		if (principal == null || query == null || query.trim().isEmpty()) {
+			return Collections.emptyList();
+		}
+
+		String email = principal.getName();
+		Optional<User> optionalUser = userRepository.findByEmail(email);
+
+		if (!optionalUser.isPresent()) {
+			return Collections.emptyList();
+		}
+
+		User user = optionalUser.get();
+
+		Page<Contact> results = contactRepository.findByNameContainingIgnoreCaseAndUser(query, user, PageRequest.of(0, 8));
+
+		List<Map<String, Object>> suggestions = new ArrayList<>();
+
+		for (Contact c : results.getContent()) {
+			Map<String, Object> m = new HashMap<>();
+			m.put("id", c.getContact_id());
+			m.put("name", c.getName());
+			m.put("email", c.getEmail());
+			m.put("phone", c.getPhone());
+			suggestions.add(m);
+		}
+
+		return suggestions;
+	}
 
 
 	

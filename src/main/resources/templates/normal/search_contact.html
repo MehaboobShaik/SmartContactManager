@@ -43,13 +43,18 @@
 <h2><center>Search Contacts</center></h2>
     <!-- 🔍 Contact Search Bar -->
     <div class="mb-4">
-        <form th:action="@{/user/search_contact}" method="get">
+        <form th:action="@{/user/search_contact}" method="get" style="position:relative;">
             <input type="text"
+                   id="searchInput"
                    name="query"
                    th:value="${query}"
                    placeholder="Enter contact name here..."
                    style="width:100%; padding:12px; border-radius:8px; border:1px solid #ccc;"
-                   required>
+                   autocomplete="off">
+
+            <!-- Suggestions container (populated by /js/script.js) -->
+            <div id="suggestions" class="list-group" style="position:absolute; top:54px; left:0; right:0; z-index:1000;
+                 display:none; max-height:260px; overflow:auto;"></div>
         </form>
     </div>
 

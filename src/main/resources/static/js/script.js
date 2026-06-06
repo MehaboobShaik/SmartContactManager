@@ -129,3 +129,86 @@ function deleteContact(cid) {
         }
     });
 }
+
+/* ===== LIVE SEARCH TYPEAHEAD ===== */
+function debounce(fn, delay) {
+    let t;
+    return function (...args) {
+        clearTimeout(t);
+        t = setTimeout(() => fn.apply(this, args), delay);
+    };
+}
+
+function initContactTypeahead() {
+    const input = document.getElementById('searchInput');
+    const box = document.getElementById('suggestions');
+    if (!input || !box) return;
+
+    const render = (items) => {
+        box.innerHTML = '';
+        if (!items || items.length === 0) {
+            box.style.display = 'none';
+            return;
+        }
+
+        items.forEach(item => {
+            const a = document.createElement('a');
+            a.className = 'list-group-item list-group-item-action bg-dark text-white';
+            a.style.cursor = 'pointer';
+            a.innerHTML = `<strong>${escapeHtml(item.name)}</strong><br/><small class="text-muted">${escapeHtml(item.email || '')} • ${escapeHtml(item.phone || '')}</small>`;
+            a.addEventListener('click', () => {
+                // Navigate to contact details on click
+                window.location.href = '/user/' + item.id + '/contact';
+            });
+            box.appendChild(a);
+        });
+
+        box.style.display = 'block';
+    };
+
+    const fetchSuggestions = debounce(function () {
+        const q = input.value.trim();
+        if (q.length === 0) {
+            render([]);
+            return;
+        }
+
+        fetch('/user/search_suggest?query=' + encodeURIComponent(q), {credentials: 'same-origin'})
+            .then(r => r.json())
+            .then(data => render(data))
+            .catch(err => {
+                console.error('Suggestion fetch failed', err);
+                render([]);
+            });
+    }, 250);
+
+    input.addEventListener('input', fetchSuggestions);
+
+    // close suggestions when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!box.contains(e.target) && e.target !== input) {
+            box.style.display = 'none';
+        }
+    });
+}
+
+function escapeHtml(str) {
+    if (!str) return '';
+    return String(str).replace(/[&<>"'`]/g, function (s) {
+        return ({
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#39;',
+            '`': '&#96;'
+        })[s];
+    });
+}
+
+// Initialize typeahead on DOM ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initContactTypeahead);
+} else {
+    initContactTypeahead();
+}
