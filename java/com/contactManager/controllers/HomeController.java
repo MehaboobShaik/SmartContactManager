@@ -38,7 +38,7 @@ public class HomeController {
 	public String home(Model model) {
 		log.info("Home page requested");
 		log.info("Home page requested");
-		model.addAttribute("title", "Home - Smart Contact Manager");
+		model.addAttribute("title", "Home - Axora");
 		return "home";
 	}
 
@@ -46,7 +46,7 @@ public class HomeController {
 	@GetMapping("/signup")
 	public String signup(Model model) {
 		log.info("Signup page opened");
-		model.addAttribute("title", "Register - Smart Contact Manager");
+		model.addAttribute("title", "Register - Axora");
 		model.addAttribute("user", new User());
 		return "signup";
 	}

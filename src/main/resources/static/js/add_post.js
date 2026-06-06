@@ -11,3 +11,13 @@ document.addEventListener("DOMContentLoaded", function() {
 	});
 
 });
+
+// Initialize TinyMCE for update form textarea if present
+document.addEventListener("DOMContentLoaded", function() {
+	if (window.tinymce && document.querySelector('#mytextarea')) {
+		tinymce.init({
+			selector: '#mytextarea',
+			height: 120
+		});
+	}
+});
