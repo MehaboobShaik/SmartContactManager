@@ -19,6 +19,111 @@ body {
 	background: #000000 !important;
 }
 
+/* ================= BRAND / AXORA TITLE DESIGN ================= */
+.navbar-brand { color: white !important; }
+
+/* ================= BRAND: logo + single-word title ================= */
+.brand-logo{
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+}
+
+.brand-title{
+	display: inline-block;
+	font-weight: 800;
+	font-size: 1.1rem;
+	line-height: 1;
+	margin-left: 4px;
+	/* gradient clipped text for a stylish look */
+	background: linear-gradient(90deg,#ff8a00,#e52e71);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	letter-spacing: 0.6px;
+}
+
+@media (max-width: 576px){
+	.brand-logo{ width:32px; height:32px }
+	.brand-title{ font-size: 1rem }
+}
+
+/* Dashboard header logo + tagline */
+.dashboard-logo{
+	width: 80px;
+	height: 80px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media (max-width: 576px){
+	.dashboard-logo{ width:56px; height:56px }
+}
+
+/* Home page hero logo */
+.home-logo{
+	width: 120px;
+	height: 120px;
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+@media (max-width: 768px){
+	.home-logo{ width:90px; height:90px }
+}
+
+/* Home title styling: make the first letter (A) a standout color */
+.home-title{
+	font-size: 2.5rem;
+	color: #ffffff;
+	font-weight: 800;
+	margin-bottom: 8px;
+}
+
+
+/* Home: A as logo + xora text */
+.home-title{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	gap:12px;
+	font-size: 2.2rem;
+	color: #ffffff;
+	font-weight: 800;
+	margin-bottom: 8px;
+}
+
+.home-mark{
+	width:64px;
+	height:64px;
+	display:inline-flex;
+	align-items:center;
+	justify-content:center;
+	border-radius:14px;
+	background: linear-gradient(135deg,#6a11cb 0%,#2575fc 100%);
+	color: #ffffff;
+	font-weight:800;
+	font-size:32px;
+	box-shadow: 0 10px 30px rgba(37,117,252,0.18);
+}
+
+.home-text{
+	font-size:2.2rem;
+	color:#ffffff;
+	letter-spacing:0.6px;
+}
+
+@media (max-width: 768px){
+	.home-mark{ width:52px; height:52px; font-size:26px }
+	.home-title, .home-text{ font-size:1.8rem }
+}
+
+@media (max-width: 768px){
+	.home-title{ font-size: 1.9rem }
+}
+
 /* ================= REMOVE BOOTSTRAP CONTAINER GAPS ================= */
 .container,
 .container-fluid {
@@ -45,6 +150,75 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+/* ================= HERO GLASS + CTA ================= */
+.hero-card{
+	max-width: 820px;
+	margin: 0 auto;
+	border-radius: 16px;
+	background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+	border: 1px solid rgba(255,255,255,0.08);
+	backdrop-filter: blur(8px) saturate(120%);
+	-webkit-backdrop-filter: blur(8px) saturate(120%);
+	box-shadow: 0 10px 40px rgba(2,6,23,0.6);
+}
+
+.hero-sub{ color: rgba(255,255,255,0.9); font-size:1.05rem }
+
+.hero-ctas .cta-btn{
+	background: linear-gradient(90deg,#6a11cb 0%, #2575fc 100%);
+	border: none;
+	color: #fff;
+	font-weight: 700;
+	box-shadow: 0 8px 30px rgba(37,117,252,0.18);
+	transition: transform .18s ease, box-shadow .18s ease;
+}
+.hero-ctas .cta-btn:hover{ transform: translateY(-4px) scale(1.02); box-shadow: 0 18px 40px rgba(37,117,252,0.22); }
+.hero-ctas .cta-btn:active{ transform: translateY(-1px); }
+
+/* gentle animated accent */
+.cta-btn{ position: relative; overflow: hidden; }
+.cta-btn::after{
+	content: "";
+	position:absolute; inset:0; background: linear-gradient(120deg, rgba(255,255,255,0.06), rgba(255,255,255,0));
+	opacity:0; transform: translateX(-30%);
+	transition: all .6s cubic-bezier(.2,.9,.2,1);
+}
+.cta-btn:hover::after{ opacity:1; transform: translateX(30%); }
+
+/* ================= FEATURE CARDS ================= */
+.feature-row{ max-width:980px; margin:0 auto }
+.feature-card{
+	background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+	border-radius: 12px;
+	border: 1px solid rgba(255,255,255,0.06);
+	backdrop-filter: blur(6px);
+	padding: 18px;
+	transition: transform .18s ease, box-shadow .18s ease;
+}
+.feature-card:hover{ transform: translateY(-8px); box-shadow: 0 12px 30px rgba(2,6,23,0.6); }
+.feature-icon{ font-size:28px; width:48px; height:48px; display:inline-flex; align-items:center; justify-content:center; border-radius:10px; background: linear-gradient(90deg,#ff8a00,#e52e71); color:white }
+
+/* ================= STATS ================= */
+.stats-row{ max-width:700px; margin: 12px auto 0 }
+.stat{ padding: 12px 8px }
+.stat-value{ font-weight:800; font-size:1.4rem; color: #ffffff }
+.stat-label{ color: rgba(255,255,255,0.7); font-size:0.9rem }
+
+/* ================= RESPONSIVE TWEAKS ================= */
+@media (max-width: 768px){
+	.hero-card{ padding: 22px }
+	.home-mark{ width:48px; height:48px; font-size:22px }
+	.home-text{ font-size:1.6rem }
+	.feature-icon{ width:44px; height:44px; font-size:22px }
+	.stat-value{ font-size:1.1rem }
+}
+
+@media (max-width: 420px){
+	.hero-sub{ font-size:0.98rem }
+	.hero-ctas{ flex-direction:column }
+	.hero-ctas .btn{ width:100% }
 }
 
 /* ================= CONTENT ================= */

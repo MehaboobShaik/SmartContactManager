@@ -33,13 +33,18 @@
                     text-align:center;
                 ">
 
-						<h1 style="font-weight:600; margin-bottom:15px;">
-							Welcome to your Dashboard 👋
-						</h1>
-
-						<p style="font-size:18px; color:#bdbdbd; margin-bottom:30px;">
-							Hello, <strong th:text="${contact}">User</strong>
-						</p>
+						<div class="dashboard-header" style="margin-bottom:24px;">
+							<img th:src="@{/img/logo.svg}" src="/img/logo.svg" alt="Axora logo" class="dashboard-logo mb-3" />
+							<h1 style="font-weight:700; font-size:28px; margin-bottom:8px;">
+								Axora
+							</h1>
+							<p style="font-size:16px; color:#bdbdbd; max-width:720px; margin:0 auto 18px;">
+								Manage all your contacts and blogs in one smart, secure, and efficient place.
+							</p>
+							<p style="font-size:16px; color:#bdbdbd; margin-top:6px;">
+								Hello, <strong th:text="${contact}">User</strong>
+							</p>
+						</div>
 
 						<!-- QUICK ACTION CARDS -->
 						<div class="row">
