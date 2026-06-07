@@ -17,18 +17,21 @@
 
 					<!-- Glass hero card -->
 					<div class="hero-card mx-auto p-4 p-md-5">
-						<div class="d-flex align-items-center justify-content-center mb-3 brand">
-							<h1 class="home-title mb-0 d-flex align-items-center">
-								<span class="home-mark" aria-hidden="true">A</span>
-								<span class="home-text ms-3">xora</span>
+						<div class="d-flex align-items-center justify-content-center mb-2 brand">
+							<h1 class="home-title mb-0">
+								<!-- combine into a single gradient word and remove boxed mark -->
+								<span class="home-text">Axora</span>
 							</h1>
+						</div>
+						<div class="text-center mb-3">
+							<div class="brand-subtitle">Contacts & Blogs Management</div>
 						</div>
 
 						<p class="lead text-muted mb-4 hero-sub">Manage all your contacts and blogs in one smart, secure, and efficient place.</p>
 
 						<div class="d-flex justify-content-center gap-2 hero-ctas">
 							<a th:href="@{/signin/}" class="btn cta-btn btn-lg px-4">Get Started</a>
-							<a th:href="@{/signup/}" class="btn btn-outline-light btn-lg px-4">Create account</a>
+							<a th:href="@{/signup}" class="btn btn-glass btn-lg px-4">Create account</a>
 						</div>
 					</div>
 
@@ -36,7 +39,7 @@
 					<div class="row mt-5 gx-3 feature-row">
 						<div class="col-md-4 mb-3">
 							<div class="feature-card p-3 h-100 text-start">
-								<div class="feature-icon">📇</div>
+								<div class="feature-icon icon-contacts">📇</div>
 								<h5 class="mt-2">Easy Contact Management</h5>
 								<p class="mb-0">Add, update, and organize your contacts effortlessly.</p>
 							</div>
@@ -44,7 +47,7 @@
 
 						<div class="col-md-4 mb-3">
 							<div class="feature-card p-3 h-100 text-start">
-								<div class="feature-icon">🔐</div>
+								<div class="feature-icon icon-secure">🔐</div>
 								<h5 class="mt-2">Secure & Private</h5>
 								<p class="mb-0">Your data is protected with secure authentication.</p>
 							</div>
@@ -52,7 +55,7 @@
 
 						<div class="col-md-4 mb-3">
 							<div class="feature-card p-3 h-100 text-start">
-								<div class="feature-icon">⚡</div>
+								<div class="feature-icon icon-fast">⚡</div>
 								<h5 class="mt-2">Fast & Smart</h5>
 								<p class="mb-0">Quick access to contacts anytime, anywhere.</p>
 							</div>

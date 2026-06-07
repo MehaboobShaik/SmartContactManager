@@ -1,17 +1,24 @@
 /* ================= GLOBAL RESET ================= */
-* {
+*{
 	box-sizing: border-box;
 }
 
-html,
-body {
-	height: 100%;
-	margin: 0;
-	padding: 0;
-	overflow-x: hidden;
-	overflow-y: auto;
-	background: #000000;
-	/* 🔥 match navbar */
+html{
+	height:100%;
+	scroll-behavior: smooth;
+}
+
+body{
+	height:100%;
+	margin:0;
+	padding:0;
+	overflow-x:hidden; /* prevent horizontal scrolling */
+	overflow-y:auto;
+	background:#111827; /* dark theme background */
+	color: #ffffff;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	min-height:100vh;
 }
 
 /* ================= NAVBAR ================= */
@@ -96,23 +103,29 @@ body {
 }
 
 .home-mark{
-	width:64px;
-	height:64px;
+	width:90px;
+	height:90px;
 	display:inline-flex;
 	align-items:center;
 	justify-content:center;
-	border-radius:14px;
+	border-radius:18px;
 	background: linear-gradient(135deg,#6a11cb 0%,#2575fc 100%);
 	color: #ffffff;
-	font-weight:800;
-	font-size:32px;
-	box-shadow: 0 10px 30px rgba(37,117,252,0.18);
+	font-weight:900;
+	font-size:44px;
+	box-shadow: 0 20px 50px rgba(37,117,252,0.18);
 }
 
 .home-text{
-	font-size:2.2rem;
-	color:#ffffff;
+	font-size:2.6rem;
 	letter-spacing:0.6px;
+	font-weight:900;
+	/* blue-purple gradient text */
+	background: linear-gradient(90deg,#6a11cb,#2575fc);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	text-shadow: 0 2px 6px rgba(38,60,80,0.18);
 }
 
 @media (max-width: 768px){
@@ -132,50 +145,96 @@ body {
 }
 
 /* ================= HOME BANNER ================= */
-.banner {
-	width: 100vw;
-	/* full width */
-	height: calc(100vh - 56px);
-	margin: 0;
-	padding: 0;
+.banner{
+	position: relative; /* needed for decorative overlays */
+	width:100%;
+	/* full viewport height so hero covers visible area */
+	min-height:100vh;
+	margin:0;
+	padding:0;
 
-	background:
-		linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)),
-		url(../img/banner.jpg);
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
+	/* keep main image unmodified so center illustration stays crisp */
+	background: url(../img/banner.jpg) center/cover no-repeat;
 
-	color: white;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	color:#ffffff;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+/* Decorative overlays: subtle darkening plus side blur so center artwork remains sharp */
+.banner::after{
+	content: "";
+	position: absolute;
+	inset: 0;
+	/* subtle even dark overlay to improve contrast for text without brightening the hero card */
+	background: linear-gradient(180deg, rgba(0,0,0,0.26), rgba(0,0,0,0.30));
+	pointer-events: none;
+	z-index: 1;
+}
+.banner::before{
+	content: "";
+	position: absolute;
+	inset: 0;
+	/* duplicate image, blurred and masked to only affect the left/right edges */
+	background: url(../img/banner.jpg) center/cover no-repeat;
+	filter: blur(6px) saturate(0.85) brightness(0.92);
+	opacity: 0.45;
+	/* keep center clear using a mask so the middle illustration stays crisp */
+	-webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 70%, rgba(0,0,0,1) 100%);
+	mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 70%, rgba(0,0,0,1) 100%);
+	pointer-events: none;
+	z-index: 2;
 }
 
 /* ================= HERO GLASS + CTA ================= */
 .hero-card{
-	max-width: 820px;
+	max-width: 850px; /* keep same max width */
+	width: calc(100% - 40px);
 	margin: 0 auto;
-	border-radius: 16px;
-	background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+	border-radius: 24px;
+	/* reduce glass brightness so background illustration remains visible */
+	background: rgba(255,255,255,0.04);
 	border: 1px solid rgba(255,255,255,0.08);
-	backdrop-filter: blur(8px) saturate(120%);
-	-webkit-backdrop-filter: blur(8px) saturate(120%);
-	box-shadow: 0 10px 40px rgba(2,6,23,0.6);
+	/* softer, more modern blur */
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+	box-shadow: 0 10px 30px rgba(2,6,23,0.55);
+	position: relative;
+	z-index: 5; /* sit above decorative overlays */
+	color: #ffffff;
+	text-shadow: 0 1px 2px rgba(0,0,0,0.45);
 }
 
-.hero-sub{ color: rgba(255,255,255,0.9); font-size:1.05rem }
+.hero-sub{ color: #0b0b0b; font-size:1.05rem; line-height:1.45; font-weight:600 }
 
 .hero-ctas .cta-btn{
 	background: linear-gradient(90deg,#6a11cb 0%, #2575fc 100%);
 	border: none;
 	color: #fff;
-	font-weight: 700;
-	box-shadow: 0 8px 30px rgba(37,117,252,0.18);
-	transition: transform .18s ease, box-shadow .18s ease;
+	font-weight: 800;
+	border-radius: 12px;
+	padding: .7rem 1.2rem;
+	/* slightly reduced shadow for a cleaner modern look */
+	box-shadow: 0 8px 22px rgba(37,117,252,0.12);
+	transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
 }
-.hero-ctas .cta-btn:hover{ transform: translateY(-4px) scale(1.02); box-shadow: 0 18px 40px rgba(37,117,252,0.22); }
+.hero-ctas .cta-btn:hover{
+	transform: translateY(-4px) scale(1.02);
+	box-shadow: 0 20px 50px rgba(99,102,241,0.18), 0 8px 30px rgba(37,117,252,0.12);
+	filter: saturate(1.05);
+}
 .hero-ctas .cta-btn:active{ transform: translateY(-1px); }
+
+/* glass secondary button */
+.btn-glass{
+	background: rgba(255,255,255,0.03);
+	border: 1px solid rgba(255,255,255,0.12);
+	color: #fff;
+	border-radius: 12px;
+	padding: .65rem 1.1rem;
+}
+.btn-glass:hover{ background: rgba(255,255,255,0.045); box-shadow: 0 8px 18px rgba(255,255,255,0.02); }
 
 /* gentle animated accent */
 .cta-btn{ position: relative; overflow: hidden; }
@@ -190,29 +249,47 @@ body {
 /* ================= FEATURE CARDS ================= */
 .feature-row{ max-width:980px; margin:0 auto }
 .feature-card{
-	background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-	border-radius: 12px;
-	border: 1px solid rgba(255,255,255,0.06);
-	backdrop-filter: blur(6px);
+	background: rgba(255,255,255,0.02);
+	border-radius: 14px;
+	border: 1px solid rgba(255,255,255,0.04);
+	backdrop-filter: blur(3px);
 	padding: 18px;
 	transition: transform .18s ease, box-shadow .18s ease;
 }
-.feature-card:hover{ transform: translateY(-8px); box-shadow: 0 12px 30px rgba(2,6,23,0.6); }
-.feature-icon{ font-size:28px; width:48px; height:48px; display:inline-flex; align-items:center; justify-content:center; border-radius:10px; background: linear-gradient(90deg,#ff8a00,#e52e71); color:white }
+.feature-card:hover{ transform: translateY(-6px); box-shadow: 0 12px 30px rgba(2,6,23,0.45); }
+.feature-icon{ font-size:20px; width:48px; height:48px; display:inline-flex; align-items:center; justify-content:center; border-radius:12px; color:white }
+.feature-icon.icon-contacts{ background: linear-gradient(90deg,#ff8a00,#e52e71); }
+.feature-icon.icon-secure{ background: linear-gradient(90deg,#00c6ff,#0072ff); }
+.feature-icon.icon-fast{ background: linear-gradient(90deg,#7bffb2,#00b4d8); }
 
 /* ================= STATS ================= */
-.stats-row{ max-width:700px; margin: 12px auto 0 }
+.stats-row{ max-width:900px; margin: 18px auto 0 }
 .stat{ padding: 12px 8px }
+.stat-card{
+	background: rgba(255,255,255,0.03);
+	border-radius: 12px;
+	padding: 12px 18px;
+	border: 1px solid rgba(255,255,255,0.06);
+	backdrop-filter: blur(4px);
+}
 .stat-value{ font-weight:800; font-size:1.4rem; color: #ffffff }
-.stat-label{ color: rgba(255,255,255,0.7); font-size:0.9rem }
+.stat-label{ color: rgba(255,255,255,0.75); font-size:0.9rem }
 
 /* ================= RESPONSIVE TWEAKS ================= */
 @media (max-width: 768px){
 	.hero-card{ padding: 22px }
-	.home-mark{ width:48px; height:48px; font-size:22px }
+	.home-mark{ width:52px; height:52px; font-size:26px }
 	.home-text{ font-size:1.6rem }
 	.feature-icon{ width:44px; height:44px; font-size:22px }
 	.stat-value{ font-size:1.1rem }
+}
+
+/* branding subtitle below the main brand */
+.brand-subtitle{
+	color: rgba(255,255,255,0.92);
+	font-weight:700;
+	font-size:0.95rem;
+	letter-spacing:0.2px;
 }
 
 @media (max-width: 420px){
@@ -224,10 +301,10 @@ body {
 /* ================= CONTENT ================= */
 .content {
 	width: 100%;
-	min-height: calc(100vh - 56px);
+	min-height: auto;
 	margin: 0;
 	padding: 20px;
-	background: #111111;
+	background: transparent;
 }
 
 /* ================= LOGIN PAGE ================= */
@@ -256,22 +333,76 @@ body {
 }
 
 
-/* ===== THEME ===== */
-:root {
-	--bg-color: #f4f6f9;
-	--card-bg: #ffffff;
-	--text-color: #000000;
+/* ===== THEME (dark defaults) ===== */
+:root{
+	--page-bg: #111827;
+	--card-bg: rgba(255,255,255,0.04);
+	--muted: rgba(255,255,255,0.75);
 }
 
-body.dark {
-	--bg-color: #121212;
-	--card-bg: #1f1f1f;
-	--text-color: #ffffff;
+/* ================= SIGNUP / AUTH STYLES ================= */
+.auth-hero{
+	min-height:100vh;
+	display:flex;
+	align-items:center;
+	background: linear-gradient(180deg,#0f1724 0%, #071226 55%);
+	background-image: linear-gradient(180deg, rgba(2,6,23,0.92), rgba(4,8,15,0.86)), url(../img/banner.jpg);
+	background-size: cover;
+	background-position: center;
+	padding: 40px 0;
 }
 
-body {
-	background: var(--bg-color);
-	color: var(--text-color);
+.auth-card{
+	background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+	border: 1px solid rgba(255,255,255,0.06);
+	border-radius: 16px;
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+	box-shadow: 0 12px 40px rgba(2,6,23,0.6);
+	color: #e6eef8;
+}
+
+.auth-logo{ width:72px }
+
+.left-features{ color: #e6eef8 }
+.left-features h2{ font-size:2.2rem; font-weight:800; color:#ffffff }
+.left-features .lead{ color: rgba(255,255,255,0.8) }
+.feature-list{ margin-top:18px }
+.feature-item{ display:flex; gap:14px; align-items:flex-start }
+.fi-icon{ width:44px; height:44px; display:inline-flex; align-items:center; justify-content:center; font-size:20px; background: linear-gradient(90deg,#6a11cb,#2575fc); border-radius:10px; box-shadow: 0 8px 30px rgba(37,117,252,0.12) }
+.fi-title{ font-weight:700; color:#fff }
+.fi-desc{ font-size:0.95rem }
+
+/* input icon styling */
+.input-icon{ background: transparent; border-right: none }
+.input-group .form-control{ border-left: none }
+.form-control:focus{ box-shadow: 0 6px 30px rgba(37,117,252,0.08); border-color: rgba(99,102,241,0.25) }
+
+/* animated gradient button */
+.btn-gradient{
+	color: #fff;
+	font-weight:700;
+	padding: .8rem 1.1rem;
+	border-radius: 12px;
+	border: none;
+	background: linear-gradient(90deg,#6a11cb,#2575fc);
+	background-size: 200% 200%;
+	transition: transform .18s ease, box-shadow .18s ease;
+}
+.btn-gradient:hover{ transform: translateY(-3px); box-shadow: 0 20px 50px rgba(37,117,252,0.16); background-position: 100% 0 }
+
+/* improve stats visibility inside hero */
+.stats-row .stat-value{ color: #ffffff; text-shadow: 0 2px 6px rgba(0,0,0,0.6); font-weight:900 }
+.stats-row .stat-label{ color: rgba(255,255,255,0.9) }
+
+/* responsive tweaks */
+@media (max-width: 991px){
+	.left-features{ display:none }
+}
+
+@media (max-width: 576px){
+	.auth-card{ padding:18px }
+	.home-text{ font-size:1.6rem }
 }
 
 /* ===== CARD ===== */
